@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>City</th>
+  </tr>
+  <tr *ngFor="let item of persons">
+    <td>{{ item.name }}</td>
+    <td>{{ item.city }}</td>
+  </tr>
+  <tr *ngFor="let item of persons" [ngSwitch]="item.city">
+    <td *ngSwitchCase="'Slaglse'">{{ item.name }}</td>
+    <td *ngSwitchCase="'Slaglse'">{{ item.city }}</td>
+  </tr>
+</table>
