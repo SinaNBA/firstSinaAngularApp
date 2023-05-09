@@ -1,4 +1,10 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  Input,
+  ViewChild,
+} from '@angular/core';
 
 @Component({
   selector: 'app-about',
@@ -17,6 +23,7 @@ export class AboutComponent implements AfterViewInit {
   hide = false;
   fullName = 'Sina NB';
   @ViewChild('ViewChildInput', { static: false }) myInput!: ElementRef;
+  @Input('parentData') public name!: string;
   ngAfterViewInit(): void {
     this.myInput.nativeElement.value = 'SinaNB';
   }
