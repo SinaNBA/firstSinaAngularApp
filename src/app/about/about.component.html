@@ -39,6 +39,13 @@ Initialization by ViewChild: <input type="text" #ViewChildInput /> <br />
 Show data by ng-content:<ng-content></ng-content>
 <!-- <ng-content select="p"></ng-content> -->
 
-<h3>Show data from parentComponent by @Input: {{name}}</h3>
+<h3>Show data from parentComponent by @Input: {{ name }}</h3>
 
-Show data from childComponent to parentComponent by @Output: <button (click)="callEvent()">Click Me!</button>
+Show data from childComponent to parentComponent by @Output:
+<button (click)="callEvent()">Click Me!</button>
+<br />
+
+<h2 style="color: red" *ngIf="flag">A test for ngIf</h2>
+<button (click)="ngIfTest()">
+  {{ flag ? "Hide" : "Show" }} ngIf test text
+</button>

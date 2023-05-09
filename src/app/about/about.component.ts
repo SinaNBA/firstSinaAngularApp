@@ -19,7 +19,7 @@ export class AboutComponent implements AfterViewInit {
   about = 'My first app about!';
   firstName = 'Sina';
   lastName = 'NB';
-  flag = true;
+  flag = false;
   cl1 = 'cl1';
   color = 'red';
   hide = false;
@@ -41,5 +41,9 @@ export class AboutComponent implements AfterViewInit {
 
   callEvent(): void {
     this.childData.emit('Data form child component!');
+  }
+
+  ngIfTest(): void {
+    this.flag = !this.flag;
   }
 }
