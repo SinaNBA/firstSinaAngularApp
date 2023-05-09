@@ -2,7 +2,9 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
+  EventEmitter,
   Input,
+  Output,
   ViewChild,
 } from '@angular/core';
 
@@ -24,6 +26,7 @@ export class AboutComponent implements AfterViewInit {
   fullName = 'Sina NB';
   @ViewChild('ViewChildInput', { static: false }) myInput!: ElementRef;
   @Input('parentData') public name!: string;
+  @Output() public childData = new EventEmitter();
   ngAfterViewInit(): void {
     this.myInput.nativeElement.value = 'SinaNB';
   }
@@ -34,5 +37,9 @@ export class AboutComponent implements AfterViewInit {
 
   onClick(e: HTMLInputElement): void {
     alert(e.value);
+  }
+
+  callEvent(): void {
+    this.childData.emit('Data form child component!');
   }
 }
