@@ -1,0 +1,40 @@
+<p>about works!</p>
+<h2>{{ about }}</h2>
+Interpolation:
+<input type="text" value="{{ firstName }}" id="txt1" disabled="{{ flag }}" />
+<br />
+Property Binding:
+<input type="text" [value]="lastName" id="txt2" [disabled]="flag" />
+<br />Class Binding:
+<h2 [class.cl1]="flag">Hello from about!</h2>
+Style Binding:
+<h2 [style.color]="color">Sina</h2>
+<h2 [style.color]="flag ? 'green' : 'red'">Sina</h2>
+<h2 [style.font-size.px]="30">Sina</h2>
+<table>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+  </tr>
+  <tr *ngIf="hide">
+    <td>{{ firstName }}</td>
+    <td>{{ lastName }}</td>
+  </tr>
+</table>
+<button (click)="show()">Show details!</button><br /><br />
+<input
+  type="text"
+  #myInput
+  placeholder="Enter a name!"
+  (keyup.enter)="onClick(myInput)"
+/>
+<button (click)="onClick(myInput)">Click me!</button><br />
+Initialization by ViewChild: <input type="text" #ViewChildInput /> <br />
+<p>
+  Two way data binding: <input type="text" [(ngModel)]="fullName" />
+  <br />
+  Full Name is: {{ fullName }}
+</p>
+
+Show data by ng-content:<ng-content></ng-content>
+<!-- <ng-content select="p"></ng-content> -->
