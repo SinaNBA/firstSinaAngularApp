@@ -125,11 +125,13 @@
     </svg>
   </div>
 
-  <app-about [parentData]="name" (childData)="message=$event">
+  <app-about [parentData]="name" (childData)="message=$event"
+  [(value)]="name2">
     <h3>Sina</h3>
     <p>NB</p>
   </app-about>
   <h3>{{message}}</h3>
+  {{name2}}
 
   <app-employees></app-employees>
 

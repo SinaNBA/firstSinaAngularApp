@@ -27,6 +27,8 @@ export class AboutComponent implements AfterViewInit {
   @ViewChild('ViewChildInput', { static: false }) myInput!: ElementRef;
   @Input('parentData') public name!: string;
   @Output() public childData = new EventEmitter();
+  @Input() value!: string;
+  @Output() valueChange = new EventEmitter();
   ngAfterViewInit(): void {
     this.myInput.nativeElement.value = 'SinaNB';
   }
@@ -45,5 +47,10 @@ export class AboutComponent implements AfterViewInit {
 
   ngIfTest(): void {
     this.flag = !this.flag;
+  }
+
+  testValue():void{
+    this.value='Atieh';
+    this.valueChange.emit(this.value);
   }
 }
